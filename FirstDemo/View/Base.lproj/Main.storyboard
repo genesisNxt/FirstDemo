@@ -59,47 +59,64 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="oNB-wr-3f5" id="rTH-7b-MP8"/>
-                        <segue destination="RsJ-Fe-6S7" kind="show" identifier="goToState" id="dcV-2W-3cw"/>
+                        <segue destination="7tB-CX-edo" kind="show" identifier="goToState" id="dra-FH-pod"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="77.811094452773617"/>
         </scene>
-        <!--State-->
-        <scene sceneID="UXj-wO-OOT">
+        <!--State Table View Controller-->
+        <scene sceneID="7eg-gc-vJd">
             <objects>
-                <tableViewController id="RsJ-Fe-6S7" customClass="StateTableViewController" customModule="FirstDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Q7-Zv-H5B">
+                <viewController id="7tB-CX-edo" customClass="StateTableViewController" customModule="FirstDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QaV-QL-FR7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvR-Pc-ao6">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stateCell" id="rL3-Ag-ZXS">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rL3-Ag-ZXS" id="VEd-jC-8ze">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="xFx-ms-daG">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7tB-CX-edo" id="QvL-A5-0cw"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stateCell" id="JVq-9V-5IA">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JVq-9V-5IA" id="rrs-Vm-al8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="RsJ-Fe-6S7" id="cAo-u8-Aiv"/>
-                            <outlet property="delegate" destination="RsJ-Fe-6S7" id="Vkn-nD-aWE"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="State" id="1M2-1u-FzF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="W4G-ey-Xm1">
-                            <connections>
-                                <action selector="addState:" destination="RsJ-Fe-6S7" id="fnc-3t-eL1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Elj-Tk-Jan" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="xFx-ms-daG" firstAttribute="top" secondItem="z1d-4w-9eG" secondAttribute="top" id="6R4-QG-YFe"/>
+                            <constraint firstItem="qvR-Pc-ao6" firstAttribute="leading" secondItem="z1d-4w-9eG" secondAttribute="leading" id="7bd-b2-cNd"/>
+                            <constraint firstItem="qvR-Pc-ao6" firstAttribute="top" secondItem="xFx-ms-daG" secondAttribute="bottom" id="AuT-Wk-lT1"/>
+                            <constraint firstItem="z1d-4w-9eG" firstAttribute="bottom" secondItem="qvR-Pc-ao6" secondAttribute="bottom" id="FXp-gR-kQu"/>
+                            <constraint firstItem="z1d-4w-9eG" firstAttribute="trailing" secondItem="qvR-Pc-ao6" secondAttribute="trailing" id="Fod-3T-P5n"/>
+                            <constraint firstItem="xFx-ms-daG" firstAttribute="trailing" secondItem="z1d-4w-9eG" secondAttribute="trailing" id="GHP-JA-sl0"/>
+                            <constraint firstItem="xFx-ms-daG" firstAttribute="leading" secondItem="z1d-4w-9eG" secondAttribute="leading" id="XuE-5G-qS2"/>
+                            <constraint firstItem="qvR-Pc-ao6" firstAttribute="top" secondItem="xFx-ms-daG" secondAttribute="bottom" id="nvd-cW-6pD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z1d-4w-9eG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5le-IS-NZG"/>
+                    <connections>
+                        <outlet property="tableView" destination="qvR-Pc-ao6" id="2J8-tA-4BG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3Q-5U-gC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1887.2" y="80.50974512743629"/>
+            <point key="canvasLocation" x="1862" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rz5-cP-avY">
