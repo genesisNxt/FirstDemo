@@ -10,22 +10,25 @@ import UIKit
 import CoreData
 class StateTableViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
 
+    
     @IBOutlet weak var tableView: UITableView!
     var state = [State]()
+    var selectedCountry : Country? {
+        didSet {
+            loadState()
+        }
+    }
     let constant = Constant()
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//    var selectedCountry : Country? {
-//        didSet {
-//            loadState()
-//        }
-//    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadState()
         tableView.dataSource = self
         tableView.delegate = self
-        //print("Error Value \(selectedCountry)")
+        print("Error Value \(selectedCountry)")
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -37,6 +37,12 @@ class CountryViewController: UIViewController,UITableViewDataSource,UITableViewD
         performSegue(withIdentifier: constant.goToState, sender: self)
         //saveCountry()
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! StateTableViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedCountry = country[indexPath.row]
+        }
+    }
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let destinationVC = segue.destination as! StateTableViewController
 //        if let indexPath = tableView.indexPathForSelectedRow {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Country" representedClassName=".Country" syncable="YES" codeGenerationType="class">
+    <entity name="Country" representedClassName="Country" syncable="YES" codeGenerationType="class">
         <attribute name="countryName" attributeType="String"/>
         <attribute name="done" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="state" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="State" inverseName="parentCountry" inverseEntity="State"/>
