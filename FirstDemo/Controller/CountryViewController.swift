@@ -35,7 +35,14 @@ class CountryViewController: UIViewController,UITableViewDataSource,UITableViewD
         //context.delete(country[indexPath.row])
         //country.remove(at: indexPath.row)
         performSegue(withIdentifier: constant.goToState, sender: self)
-        saveCountry()
+        //saveCountry()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! StateTableViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedCountry = country[indexPath.row]
+        }
+        
     }
     
     @IBAction func addCountry(_ sender: UIBarButtonItem) {
