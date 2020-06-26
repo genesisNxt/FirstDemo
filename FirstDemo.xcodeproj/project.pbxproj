@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		442E297824A5A41700DA61C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E297724A5A41700DA61C5 /* AppDelegate.swift */; };
 		442E297A24A5A41700DA61C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E297924A5A41700DA61C5 /* SceneDelegate.swift */; };
-		442E297C24A5A41700DA61C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E297B24A5A41700DA61C5 /* ViewController.swift */; };
+		442E297C24A5A41700DA61C5 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E297B24A5A41700DA61C5 /* CountryViewController.swift */; };
 		442E297F24A5A41700DA61C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442E297D24A5A41700DA61C5 /* Main.storyboard */; };
 		442E298224A5A41700DA61C5 /* FirstDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 442E298024A5A41700DA61C5 /* FirstDemo.xcdatamodeld */; };
 		442E298424A5A41A00DA61C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 442E298324A5A41A00DA61C5 /* Assets.xcassets */; };
 		442E298724A5A41A00DA61C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442E298524A5A41A00DA61C5 /* LaunchScreen.storyboard */; };
+		442E299324A5AB9A00DA61C5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E299224A5AB9A00DA61C5 /* Constant.swift */; };
+		442E299524A5B5A200DA61C5 /* StateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442E299424A5B5A200DA61C5 /* StateTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		442E297424A5A41700DA61C5 /* FirstDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		442E297724A5A41700DA61C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		442E297924A5A41700DA61C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		442E297B24A5A41700DA61C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		442E297B24A5A41700DA61C5 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		442E297E24A5A41700DA61C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		442E298124A5A41700DA61C5 /* FirstDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirstDemo.xcdatamodel; sourceTree = "<group>"; };
 		442E298324A5A41A00DA61C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		442E298624A5A41A00DA61C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		442E298824A5A41A00DA61C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		442E299224A5AB9A00DA61C5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		442E299424A5B5A200DA61C5 /* StateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +64,48 @@
 			children = (
 				442E297724A5A41700DA61C5 /* AppDelegate.swift */,
 				442E297924A5A41700DA61C5 /* SceneDelegate.swift */,
-				442E297B24A5A41700DA61C5 /* ViewController.swift */,
-				442E297D24A5A41700DA61C5 /* Main.storyboard */,
-				442E298324A5A41A00DA61C5 /* Assets.xcassets */,
-				442E298524A5A41A00DA61C5 /* LaunchScreen.storyboard */,
+				442E298E24A5AB4900DA61C5 /* Controller */,
+				442E298F24A5AB5500DA61C5 /* View */,
+				442E299124A5AB6E00DA61C5 /* Supported Files */,
 				442E298824A5A41A00DA61C5 /* Info.plist */,
-				442E298024A5A41700DA61C5 /* FirstDemo.xcdatamodeld */,
+				442E299024A5AB5D00DA61C5 /* Model */,
+				442E299224A5AB9A00DA61C5 /* Constant.swift */,
 			);
 			path = FirstDemo;
+			sourceTree = "<group>";
+		};
+		442E298E24A5AB4900DA61C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				442E297B24A5A41700DA61C5 /* CountryViewController.swift */,
+				442E299424A5B5A200DA61C5 /* StateTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		442E298F24A5AB5500DA61C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				442E297D24A5A41700DA61C5 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		442E299024A5AB5D00DA61C5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				442E298024A5A41700DA61C5 /* FirstDemo.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		442E299124A5AB6E00DA61C5 /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
+				442E298324A5A41A00DA61C5 /* Assets.xcassets */,
+				442E298524A5A41A00DA61C5 /* LaunchScreen.storyboard */,
+			);
+			path = "Supported Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				442E297C24A5A41700DA61C5 /* ViewController.swift in Sources */,
+				442E297C24A5A41700DA61C5 /* CountryViewController.swift in Sources */,
 				442E297824A5A41700DA61C5 /* AppDelegate.swift in Sources */,
+				442E299324A5AB9A00DA61C5 /* Constant.swift in Sources */,
+				442E299524A5B5A200DA61C5 /* StateTableViewController.swift in Sources */,
 				442E297A24A5A41700DA61C5 /* SceneDelegate.swift in Sources */,
 				442E298224A5A41700DA61C5 /* FirstDemo.xcdatamodeld in Sources */,
 			);
