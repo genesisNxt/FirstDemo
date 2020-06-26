@@ -14,11 +14,18 @@ class StateTableViewController: UIViewController, UITableViewDataSource,UITableV
     var state = [State]()
     let constant = Constant()
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//    var selectedCountry : Country? {
+//        didSet {
+//            loadState()
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadState()
         tableView.dataSource = self
         tableView.delegate = self
+        //print("Error Value \(selectedCountry)")
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -38,6 +45,7 @@ class StateTableViewController: UIViewController, UITableViewDataSource,UITableV
             let newState = State(context: self.context)
             newState.stateName = textField.text
             newState.done = false
+            //newState.parentCountry = self.selectedCountry
             self.state.append(newState)
             self.saveState()
         }
@@ -57,22 +65,28 @@ class StateTableViewController: UIViewController, UITableViewDataSource,UITableV
         tableView.reloadData()
     }
     // MARK:- load State
-    func loadState(with reqeust: NSFetchRequest<State> = State.fetchRequest(), predicate: NSPredicate? = nil) {
+    func loadState(with reqeust: NSFetchRequest<State> = State.fetchRequest()) {
         
-        let request: NSFetchRequest<State> = State.fetchRequest()
+//        if let additionalPredicate = predicate {
+//            reqeust.predicate = additionalPredicate
+//        }
+        
+        //let request: NSFetchRequest<State> = State.fetchRequest()
         do {
-            state = try context.fetch(request)
+            state = try context.fetch(reqeust)
         } catch  {
             print("Error Loading\(error)")
         }
+        tableView.reloadData()
     }
 }
 extension StateTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let request: NSFetchRequest<State> = State.fetchRequest()
         let predicate = NSPredicate(format: "stateName CONTAINS[cd] %@", searchBar.text!)
+        request.predicate = predicate
         request.sortDescriptors = [NSSortDescriptor(key: "stateName", ascending: true)]
-        loadState(with: request, predicate: predicate)
+        loadState(with: request)
         
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

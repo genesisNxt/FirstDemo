@@ -109,7 +109,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z1d-4w-9eG"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5le-IS-NZG"/>
+                    <navigationItem key="navigationItem" id="5le-IS-NZG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ge5-uJ-dM5">
+                            <connections>
+                                <action selector="addState:" destination="7tB-CX-edo" id="nQM-Fb-R5W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="qvR-Pc-ao6" id="2J8-tA-4BG"/>
                     </connections>
